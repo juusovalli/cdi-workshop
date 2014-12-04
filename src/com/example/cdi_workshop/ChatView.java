@@ -1,5 +1,7 @@
 package com.example.cdi_workshop;
 
+import javax.inject.Inject;
+
 import com.vaadin.cdi.CDIView;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.navigator.View;
@@ -26,6 +28,9 @@ public class ChatView extends CustomComponent implements View {
     private User targetUser;
 
     private Layout messageLayout;
+
+    @Inject
+    BlackBoard userHolder;
 
     private static final int MAX_MESSAGES = 16;
 
@@ -161,8 +166,7 @@ public class ChatView extends CustomComponent implements View {
     }
 
     private User getCurrentUser() {
-        // TODO Implement this
-        return null;
+        return userHolder.getCurrentUser();
     }
 
 }

@@ -1,5 +1,7 @@
 package com.example.cdi_workshop;
 
+import javax.inject.Inject;
+
 import com.vaadin.cdi.CDIView;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.navigator.View;
@@ -17,6 +19,9 @@ import com.vaadin.ui.VerticalLayout;
 public class LoginView extends CustomComponent implements View, ClickListener {
 
     private UserDAO userDAO = new TestingUserDAO();
+
+    @Inject
+    BlackBoard userHolder;
 
     private TextField usernameField;
     private PasswordField passwordField;
@@ -55,7 +60,7 @@ public class LoginView extends CustomComponent implements View, ClickListener {
             return;
         }
 
-        // TODO set current user
+        userHolder.setCurrentUser(loginUser);
 
         getUI().getNavigator().navigateTo("chat");
     }
