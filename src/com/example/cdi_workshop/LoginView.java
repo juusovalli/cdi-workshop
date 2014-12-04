@@ -1,5 +1,6 @@
 package com.example.cdi_workshop;
 
+import com.vaadin.cdi.CDIView;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -12,6 +13,7 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
+@CDIView("")
 public class LoginView extends CustomComponent implements View, ClickListener {
 
     private UserDAO userDAO = new TestingUserDAO();

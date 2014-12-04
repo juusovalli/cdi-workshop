@@ -1,5 +1,6 @@
 package com.example.cdi_workshop;
 
+import com.vaadin.cdi.CDIView;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -15,6 +16,7 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
+@CDIView("chat")
 public class ChatView extends CustomComponent implements View {
 
     private UserDAO userDAO = new TestingUserDAO();
